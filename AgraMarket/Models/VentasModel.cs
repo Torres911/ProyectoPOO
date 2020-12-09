@@ -9,6 +9,9 @@ namespace AgraMarket.Models
         public string usuarioCliente { get; set; }
 
         public DateTime fechaCompra { get; set; }
-        public List<Producto> listaVentas { get; set; }
+        
+        public Producto producto { get; set; }
+
+        public int cantidadCompra { get; set; }
     } 
 }

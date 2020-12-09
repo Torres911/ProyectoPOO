@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace AgraMarket
 {
@@ -24,6 +26,7 @@ namespace AgraMarket
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContextPool<object>(options => options.UseMySql("Server=movilesdb20201.cmlwzrhblbat.us-east-1.rds.amazonaws.com;Port=3306;Database=POOGrupo5;User=movilesDBUser;Password=adminMovilesDB20201;", mySqlOptions => mySqlOptions.ServerVersion(new Version(10, 2, 21), ServerType.MariaDb)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
