@@ -2,12 +2,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AgraMarket.Models
 {
-    public class Producto 
-    {
-        public string nombre { get; set; }
-        public long idVendedor { get; set;}
-        public int precio { get; set; }
-        public int cantidad { get; set; }
-
+    public class ProductoModel
+    {  
+        [Key]
+        public long Id { get; set; }
+        public long IdGranjero { get; set; }
+        public string NomProducto { get; set; }
+        public string FotoProducto { get; set; }
+        public string ValorProducto { get; set; }
+        public string Cantidad { get; set; }
     }
 }

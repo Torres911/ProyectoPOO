@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AgraMarket.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,7 +27,7 @@ namespace AgraMarket
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContextPool<object>(options => options.UseMySql("Server=movilesdb20201.cmlwzrhblbat.us-east-1.rds.amazonaws.com;Port=3306;Database=POOGrupo5;User=movilesDBUser;Password=adminMovilesDB20201;", mySqlOptions => mySqlOptions.ServerVersion(new Version(10, 2, 21), ServerType.MariaDb)));
+            services.AddDbContextPool<AgraMarketDBContext>(options => options.UseMySql("Server=movilesdb20201.cmlwzrhblbat.us-east-1.rds.amazonaws.com;Port=3306;Database=POOGrupo5;User=movilesDBUser;Password=adminMovilesDB20201;", mySqlOptions => mySqlOptions.ServerVersion(new Version(10, 2, 21), ServerType.MariaDb)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

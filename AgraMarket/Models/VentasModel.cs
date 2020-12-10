@@ -4,14 +4,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AgraMarket.Models
 {
-    public class Ventas
+    public class VentasModel
     {
-        public string usuarioCliente { get; set; }
+        public long Id { get; set; }
 
-        public DateTime fechaCompra { get; set; }
+        public long IdVendedor { get; set; }
         
-        public Producto producto { get; set; }
+        public string NomProducto { get; set; }
 
-        public int cantidadCompra { get; set; }
+        public string NomVendedor { get; set; }
+
+        public int Cantidad { get; set; }
+        public string DirEntrega { get; set; }
+
+        public DateTime FechaEntrega { get; set; }
     } 
 }
