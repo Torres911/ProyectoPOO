@@ -44,7 +44,7 @@ namespace AgraMarket
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles(); //importante para cambiar estilos
 
             app.UseRouting();
 

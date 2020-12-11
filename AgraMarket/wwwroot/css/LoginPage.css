@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div#LoginWrapper
+{
+    height : 100vw;
+    background-color: rgb(55, 182, 72);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+}

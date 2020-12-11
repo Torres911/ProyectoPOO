@@ -14397,6 +14397,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Login\\SignIn.cshtml",
+      "TargetPath": "Views\\Login\\SignIn.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"

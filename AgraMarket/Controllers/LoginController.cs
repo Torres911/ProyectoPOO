@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,16 +9,18 @@ using AgraMarket.Models;
 
 namespace AgraMarket.Controllers
 {
-    public class HomeController : Controller
+    [Route("[controller]")]
+    public class LoginController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<LoginController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public LoginController(ILogger<LoginController> logger)
         {
             _logger = logger;
         }
-
-        public IActionResult Index()
+         //https://Localhost:5001/Login/SignIn/
+        //[HttpGet("SignIn")]
+        public IActionResult SignIn()
         {
             return View();
         }

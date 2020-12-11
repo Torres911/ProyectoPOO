@@ -11,7 +11,7 @@ namespace AgraMarket.Models
 
         public long IdTarjetaCredito { get; set; }
 
-        public long IdCuentaBancaria { get; set; }
+        public long IdCuentaAhorros { get; set; }
 
         public long IdPaypal { get; set; }
     }

@@ -9,7 +9,7 @@ namespace AgraMarket.Models
         public long IdGranjero { get; set; }
         public string NomProducto { get; set; }
         public string FotoProducto { get; set; }
-        public string ValorProducto { get; set; }
-        public string Cantidad { get; set; }
+        public int ValorProducto { get; set; }
+        public int Cantidad { get; set; }
     }
 }
