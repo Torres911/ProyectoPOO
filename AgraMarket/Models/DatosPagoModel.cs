@@ -7,12 +7,14 @@ namespace AgraMarket.Models
     public class DatosPagoModel
     {
         [Key]
-        public string Id { get; set; }
+        public long Id { get; set; }
+        public long NumeroTarjetaCredito { get; set; }
+        public string NombreTarjetaCredito { get; set; }
+        public int CupoTarjetaCredito { get; set; }
+        public string UserPaypal { get; set; }
+        public int MontoPaypal { get; set; }
+        public string NumeroCuentaAhorros { get; set; }
+        public int MontoAhorros { get; set; }
 
-        public long IdTarjetaCredito { get; set; }
-
-        public long IdCuentaAhorros { get; set; }
-
-        public long IdPaypal { get; set; }
     }
 }

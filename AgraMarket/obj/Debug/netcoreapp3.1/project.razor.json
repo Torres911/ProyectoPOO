@@ -14392,6 +14392,11 @@
   "RootNamespace": "AgraMarket",
   "Documents": [
     {
+      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\ViewModels\\User\\UserList.cshtml",
+      "TargetPath": "ViewModels\\User\\UserList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
