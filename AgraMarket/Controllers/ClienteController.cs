@@ -38,7 +38,6 @@ namespace AgraMarket.Controllers
             }
             catch(Exception e)
             {
-                vm.HayLibros = false;
                 return View(vm); 
             }
         }

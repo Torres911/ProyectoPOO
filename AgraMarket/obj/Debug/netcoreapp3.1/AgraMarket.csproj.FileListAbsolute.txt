@@ -57,4 +57,4 @@ D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\AgraMarket.dll
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\AgraMarket.pdb
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\AgraMarket.genruntimeconfig.cache
-D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\Login\loginForm.cshtml.g.cs
+D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\Login\SignIn.cshtml.g.cs
