@@ -34,17 +34,19 @@ namespace AgraMarket.Controllers
         {
             UsuarioModel Usuario = new UsuarioModel()
             {
-                Nombre = "Maria",
-                Apellido = "Suarez",
-                CC = "1107520163",
-                Edad = 21,
-                User = "mojo",
-                Pass = "mojo",
+                Nombre = "Santiago",
+                Apellido = "Torres",
+                CC = "9847395365",
+                Edad = 20,
+                User = "santorin",
+                Pass = "santiago1234",
                 Departamento = "Valle del Cauca",
                 Municipio = "Cali",
-                Dirección = "Carrera 113 bis #5-80",
+                Direccion = "En la mierda, digo en el norte",
                 TipoUsuario = "Vendedor",
-                IdDatosPago = 12345
+                NumeroTarjetaCredito = "12345",
+                TipoTarjetaCredito = "Paypal",
+                Monto = 500000
             };
             dBContext.Usuarios.Add(Usuario);
             /* "await" permite que se espere a que el dBContext

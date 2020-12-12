@@ -5,13 +5,10 @@ namespace AgraMarket.ViewModels
 {
     public class UserListViewModel
     {
-        public List<UsuarioModel> Usuarios { get; set;}
+        public List<UsuarioModel> Usuarios { get; set; }
+        public UserListViewModel()
         {
-            public UserListViewModel()
-            {
-                Usuarios = new List<UsuarioModel>();
-
-            }
+            Usuarios = new List<UsuarioModel>();
         }
     }
 }

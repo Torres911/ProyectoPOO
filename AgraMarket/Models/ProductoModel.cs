@@ -6,7 +6,7 @@ namespace AgraMarket.Models
     {  
         [Key]
         public long Id { get; set; }
-        public long IdGranjero { get; set; }
+        public long IdVendedor { get; set; }
         public string NomProducto { get; set; }
         public string FotoProducto { get; set; }
         public int ValorProducto { get; set; }

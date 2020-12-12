@@ -14,7 +14,6 @@ namespace AgraMarket.Services{
         #region Tablas
         public DbSet<UsuarioModel> Usuarios { get; set; }
         public DbSet<ComprasModel> Compras { get; set; }
-        public DbSet<DatosPagoModel> DatosPago { get; set; }
         public DbSet<VentasModel> Ventas { get; set; }
         public DbSet<ProductoModel> Productos { get; set; }
 

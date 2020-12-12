@@ -14,9 +14,11 @@ namespace AgraMarket.Models
         public string Pass { get; set; }
         public string Departamento { get; set; }
         public string Municipio { get; set; }
-        public string Dirección { get; set; }
+        public string Direccion { get; set; }
         public string TipoUsuario { get; set; } 
-        public long IdDatosPago { get; set; }
+        public string NumeroTarjetaCredito { get; set; }
+        public string TipoTarjetaCredito { get; set; }
+        public long Monto{ get; set; }
     }
 }
 

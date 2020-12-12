@@ -6,9 +6,8 @@ namespace AgraMarket.Models
 {
     public class ComprasModel
     {
-        [Key]
+        [Key] //Este atributo va a ser la llave
         public long Id { get; set; }
-
         public long IdCliente { get; set; }
 
         public string NomProducto { get; set; }

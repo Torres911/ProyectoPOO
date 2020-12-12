@@ -17,7 +17,7 @@ namespace AgraMarket.Controllers
 
         #endregion Properties
 
-        #region Constructor
+        /*#region Constructor
 
         public ClienteController(AgraMarketDBContext dBContext)
         {
@@ -41,7 +41,7 @@ namespace AgraMarket.Controllers
                 return View(vm); 
             }
         }
-        #endregion Constructor
+        #endregion Constructor*/
 
     }
 }
