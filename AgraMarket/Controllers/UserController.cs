@@ -31,8 +31,8 @@ namespace AgraMarket.Controllers
         {
             try
             {
-                return View();
-                
+                UsuarioModel usuario = new UsuarioModel();
+                return View(usuario);
             }
             catch (Exception e)
             {
@@ -53,10 +53,50 @@ namespace AgraMarket.Controllers
 
             catch (Exception e2)
             {
-                dBContext.Usuarios.Add(usuario); 
-                await dBContext.SaveChangesAsync(); 
-                return RedirectToAction("Home", "Index");
+                dBContext.Usuarios.Add(usuario);
+                await dBContext.SaveChangesAsync();
+                return RedirectToAction("Index", "Home");
             }
+        }
+
+        //https://Localhost:5001/IngresarUsuario
+        [HttpGet("IngresarUsuario")]
+        public IActionResult IngresarUsuario()
+        {
+            try
+            {
+                UsuarioModel usuario = new UsuarioModel();
+                return View(usuario);
+            }
+            catch (Exception e)
+            {
+                return Content(e.Message);
+            }
+        }
+
+        [HttpGet("VerificarUsuario")]
+        public async Task<IActionResult> VerificarUsuario(UsuarioModel usuario)
+        {
+            try
+            {
+                UsuarioModel user = new UsuarioModel();
+                user = await dBContext.Usuarios.FindAsync(usuario);
+                if(usuario.TipoUsuario == "Vendedor")
+                {
+                    return RedirectToAction("Index", "Home"); 
+    
+                }
+                if(usuario.TipoUsuario == "Cliente")
+                {
+                    return RedirectToAction("CrearUsuario", "User"); 
+                }
+            }
+            catch (Exception e)
+            {
+                
+                return Content(e.Message);
+            }
+
         }
 
         //https://Localhost:5001/User/EliminarUsuario/5

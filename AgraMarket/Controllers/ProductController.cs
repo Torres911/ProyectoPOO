@@ -30,7 +30,7 @@ namespace AgraMarket.Controllers
         /*async task representa una tarea que se esta ejectuando,
         y que esta esperando para devolver el objeto del tipo 
         especificado*/
-        public async Task<IActionResult> CrearUsuario()
+        public async Task<IActionResult> CrearProducto()
         {
             ProductoModel Producto = new ProductoModel()
             {

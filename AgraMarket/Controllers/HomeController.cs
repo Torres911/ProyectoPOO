@@ -18,7 +18,6 @@ namespace AgraMarket.Controllers
         {
             _logger = logger;
         }
-        [HttpPost("Index")]
         public IActionResult Index()
         {
             return View();

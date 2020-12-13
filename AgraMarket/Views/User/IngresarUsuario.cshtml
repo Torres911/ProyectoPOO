@@ -1,0 +1,36 @@
+@model AgraMarket.Models.UsuarioModel
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="wwwroot/css/IngresarUsuarioStyle.css">
+<title>Inciar Sesión</title>
+</head>
+<body>
+
+<div class="split left">
+</div>
+
+<div class="split right">
+  <form asp-action="VerificarUsuario" method="GET" asp-controller="User">
+  <div class="centered">
+     <img src="../static/User_Circle.png"><!--Cambiar-->
+     <br><br>
+     <div class="form-group">
+      <h5>Nombre de usuario<h5>
+      <input asp-for="User" type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="Nombre de usuario">
+    </div>
+    <div class="form-group">
+      <h5>Contraseña<h5>
+      <input asp-for="Pass" type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña">
+    </div>
+    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+    <p>¿No tienes cuenta?</p>
+    <a asp-action="CrearUsuario" method="GET" asp-controller="User">Registrate</a>
+  </div>
+  </form>
+</div>
+</body>
+</html> 

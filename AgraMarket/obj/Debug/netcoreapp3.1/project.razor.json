@@ -14412,6 +14412,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\User\\IngresarUsuario.cshtml",
+      "TargetPath": "Views\\User\\IngresarUsuario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -14419,11 +14424,6 @@
     {
       "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\User\\GuardarUsuario.cshtml",
-      "TargetPath": "Views\\User\\GuardarUsuario.cshtml",
       "FileKind": "mvc"
     },
     {
