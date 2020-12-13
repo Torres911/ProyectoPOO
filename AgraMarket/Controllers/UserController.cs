@@ -27,35 +27,66 @@ namespace AgraMarket.Controllers
 
         //https://Localhost:5001/User/CrearUsuario
         [HttpGet("CrearUsuario")]
-        /*async task representa una tarea que se esta ejectuando,
-        y que esta esperando para devolver el objeto del tipo 
-        especificado*/
-        public async Task<IActionResult> CrearUsuario()
+        public IActionResult CrearUsuario()
         {
-            UsuarioModel Usuario = new UsuarioModel()
+            try
             {
-                Nombre = "Santiago",
-                Apellido = "Torres",
-                CC = "9847395365",
-                Edad = 20,
-                User = "santorin",
-                Pass = "santiago1234",
-                Departamento = "Valle del Cauca",
-                Municipio = "Cali",
-                Direccion = "En la mierda, digo en el norte",
-                TipoUsuario = "Vendedor",
-                NumeroTarjetaCredito = "12345",
-                TipoTarjetaCredito = "Paypal",
-                Monto = 500000
-            };
-            dBContext.Usuarios.Add(Usuario);
-            /* "await" permite que se espere a que el dBContext
-            haga los cambios necesarios antes de correrlo 
-            (Esto le toma un tiempo a la bd)*/ 
-            await dBContext.SaveChangesAsync();
-            return Ok(Usuario.Id.ToString());
-            /*Estos id una vez creados, no pueden repetirse en la base
-            de datos, incluso después de borrarlos*/
+                return View();
+                
+            }
+            catch (Exception e)
+            {
+                return Content(e.Message);
+            }
+        }
+
+        //https://Localhost:5001/User/GuardarUsuario
+        [HttpGet("GuardarUsuario")]
+        public async Task<IActionResult> GuardarUsuario(UsuarioModel usuario)
+        {
+            try
+            {
+                UsuarioModel user = new UsuarioModel();
+                user = await dBContext.Usuarios.FindAsync(usuario);
+                return Content("Este usuario ya existe. Intentalo mas tarde.");
+            }
+
+            catch (Exception e2)
+            {
+                dBContext.Usuarios.Add(usuario); 
+                await dBContext.SaveChangesAsync(); 
+                return RedirectToAction("Home", "Index");
+            }
+        }
+
+        //https://Localhost:5001/User/EliminarUsuario/5
+        [HttpGet("EliminarUsuario/{id}")]
+        public async Task<IActionResult> EliminarUsuario(long Id)
+        {
+            try
+            {
+                UsuarioModel usuario = await dBContext.Usuarios.FindAsync(Id);
+                if(usuario == null)
+                {
+                    throw new Exception("El usuario que ingreso no se encontro. Intentelo mas tarde.");
+                    //Colocar vista o link que permita volver a Home
+                }
+
+                if(usuario != null)
+                {
+                    dBContext.Usuarios.Remove(usuario);
+                    await dBContext.SaveChangesAsync();
+                    return Ok("El usuario fue eliminado exitosamente");
+                    //Colocar vista o link que permita volver a Home
+                }
+                return Ok("Hubo un error al intentar eliminar el usuario. Intentelo mas tarde"); 
+                //Colocar vista o link que permita volver a Home o al Home del usuario
+            }
+            catch (Exception e1)
+            {
+                return Content(e1.Message);
+            }
+
         }
     }
 }

@@ -14422,6 +14422,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\User\\GuardarUsuario.cshtml",
+      "TargetPath": "Views\\User\\GuardarUsuario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -14429,6 +14434,11 @@
     {
       "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\User\\CrearUsuario.cshtml",
+      "TargetPath": "Views\\User\\CrearUsuario.cshtml",
       "FileKind": "mvc"
     }
   ],

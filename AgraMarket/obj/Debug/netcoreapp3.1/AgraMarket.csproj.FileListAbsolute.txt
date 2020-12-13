@@ -58,3 +58,5 @@ D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\AgraMarket.pdb
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\AgraMarket.genruntimeconfig.cache
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\ViewModels\User\UserList.cshtml.g.cs
+D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\User\CrearUsuario.cshtml.g.cs
+D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\User\GuardarUsuario.cshtml.g.cs
