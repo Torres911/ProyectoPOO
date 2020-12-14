@@ -30,7 +30,6 @@ namespace Observer
             
             foreach(IObserver o in observadores){ //aqui literal informa a todos los objetos de la lista
                 o.Update(mensaje);
-                //o.UpdatePull();
             }
         }
 

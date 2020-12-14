@@ -1,4 +1,4 @@
-@model AgraMarket.Models.UsuarioModel
+@model AgraMarket.Models.ProductoModel
 
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,7 @@
 
 <div class="split left">
   <div class="centered">
-    <img src="../static/registerPage.jpg" alt="Campesino recogiendo cafe">
+    <img src="../images/registerPage.jpg" alt="Campesino recogiendo cafe">
   </div>
 </div>
 
@@ -23,24 +23,21 @@
         <p>Ingrese la información del nuevo producto para agregarlo a tu catalogo de productos.</p>
           <div class="row row-space">
           <div class="col-6">
-            <input asp-for="NomProducto" type="input" class="form-control" id="Nombre", placeholder="Nombre" required>
+            <input asp-for="NomProducto" type="input" class="form-control" id="NomProducto", placeholder="Nombre" required>
           </div>
           <br><br>
           </div>
           <div class="row row-space">
           <div class="col-6">
-            <input asp-for="TipoProdcuto" type="input" class="form-control" id="CC", placeholder="Descripción del producto" required>
+            <input asp-for="TipoProducto" type="input" class="form-control" id="TipoProdcuto", placeholder="Descripción del producto" required>
           </div>
           </div>
           <br>
           <div class="row row-space">
           <div class="col-6">
-            <input asp-for="Cantidad" type="input" class="form-control" id="User", placeholder="Cantidad de producto que dispone" required>
+            <input asp-for="Precio" type="input" class="form-control" id="Precio", placeholder="Precio" required>
           </div>
           <div class="row row-space">
-          <div class="col-6">
-            <input asp-for="Precio" type="input" class="form-control" id="User", placeholder="Precio" required>
-          </div>
           </div>
           </div>
           <div class="col-md-12 text-center">

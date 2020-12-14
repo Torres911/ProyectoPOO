@@ -125,15 +125,15 @@ namespace AgraMarket.Controllers
         }
 
         //https://Localhost:5001/User/EditarUsuario
-        [HttpGet("EditarUsuario")]
+        [HttpPost("EditarUsuario")]
         public async Task<IActionResult> EditarUsuario(long codigo)
         {
             try
             {
-                UsuarioModel user = await dBContext.Usuarios.FindAsync(codigo);
+                UsuarioModel user = await dBContext.Usuarios.FindAsync(codigo); //user.codigo
                 if(user == null)
                 {
-                    return View("Hubo un error editando. Intentalo de nuevo.");
+                    return Content("Hubo un error editando. Intentalo de nuevo.");
                 }
                 return View(user);
             }
@@ -151,7 +151,11 @@ namespace AgraMarket.Controllers
             {
                 dBContext.Entry(usuario).State = EntityState.Modified;
                 await dBContext.SaveChangesAsync();
-                return View();
+                if(usuario.TipoUsuario == "Vendedor")
+                {
+                    return RedirectToAction("VendedorPage", usuario);
+                }
+                return RedirectToAction("ClientePage", usuario);
             }
             catch (Exception e)
             {
@@ -159,7 +163,7 @@ namespace AgraMarket.Controllers
             }
         }
 
-        //https://Localhost:5001/User/EliminarUsuario/5
+        //https://Localhost:5001/User/EliminarUsuario/
         [HttpGet("EliminarUsuario/{id}")]
         public async Task<IActionResult> EliminarUsuario(long Id)
         {

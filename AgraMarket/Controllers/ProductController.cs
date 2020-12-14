@@ -26,7 +26,7 @@ namespace AgraMarket.Controllers
         #endregion
 
         //https://Localhost:5001/User/CrearProducto
-        [HttpGet("CrearProducto")]
+        [HttpPost("CrearProducto")]
         public IActionResult CrearProducto()
         {
             try
@@ -42,7 +42,7 @@ namespace AgraMarket.Controllers
         }
 
         //https://Localhost:5001/User/GuardarProducto
-        [HttpGet("GuardarProducto")]
+        [HttpPost("GuardarProducto")]
         public async Task<IActionResult> GuardarProducto(ProductoModel producto)
         {    
             try
@@ -60,21 +60,14 @@ namespace AgraMarket.Controllers
             }
         }
 
-        //http://localhost:5001/User/DesplegarProductos
+        //http://localhost:5001/User/DesplegarProductos/{id}
         [HttpGet("DesplegarProductos")]
-        public async Task<IActionResult> DesplegarProductos(int id)
+        public async Task<IActionResult> DesplegarProductos(long id)
         {    
             try
             {
-                List<ProductoModel> dbCompleta = new List<ProductoModel>();
-                dbCompleta = await dBContext.Productos.ToListAsync();
-                List<ProductoModel> dBVendedor = new List<ProductoModel>();
-                foreach(ProductoModel temp in dbCompleta){
-                    if(temp.IdVendedor == id){
-                        dBVendedor.Add(temp);
-                    }
-                }
-                return RedirectToAction("VendedorProductosPage", dBVendedor);
+                UsuarioModel user = await dBContext.Usuarios.FindAsync(id);
+                return RedirectToAction("VendedorProductosPage", user);
             }
 
             catch (Exception e2)
@@ -84,14 +77,22 @@ namespace AgraMarket.Controllers
         }
         
         //http://localhost:5001/User/VendedorProductosPage
-        [HttpGet("VendedorProductosPage")]
-        public IActionResult VendedorProductosPage(List<ProductoModel> dBVendedor)
+        [HttpGetss("VendedorProductosPage")]
+        public async Task<IActionResult> VendedorProductosPage(UsuarioModel usuario)
         {    
             try
             {
-                return View(dBVendedor);
+                List<ProductoModel> dbCompleta = new List<ProductoModel>();
+                dbCompleta = await dBContext.Productos.ToListAsync();
+                foreach(ProductoModel temp in dbCompleta)
+                {
+                    if(temp.IdVendedor == usuario.Id)
+                    {
+                        usuario.listaProductos.Add(temp);
+                    }
+                }
+                return View(usuario);
             }
-
             catch (Exception e2)
             {
                 return View(e2.Message);

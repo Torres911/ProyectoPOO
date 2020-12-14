@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Observer
 {
-    /*
+    
     class Observador : IObserver{
 
         private string nombre;
@@ -34,5 +34,4 @@ namespace Observer
             Console.WriteLine("Pull, {0}-{1}", nombre, n);
         }
     }
-    */
-}
+}    

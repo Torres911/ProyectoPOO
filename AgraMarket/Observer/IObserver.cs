@@ -8,6 +8,5 @@ namespace Observer{
 
      interface IObserver{
         void Update(string mensaje);
-        void UpdatePULL();
     }
 }
