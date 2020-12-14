@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using AgraMarket.ViewModels;
 using System;
+using System.Linq;
 
 namespace AgraMarket.Controllers
 {
@@ -74,29 +75,88 @@ namespace AgraMarket.Controllers
             }
         }
 
-        [HttpGet("VerificarUsuario")]
-        public async Task<IActionResult> VerificarUsuario(UsuarioModel usuario)
+        //https://Localhost:5001/User/ClientePage
+        [HttpGet("ClientePage")]
+        public IActionResult ClientePage(UsuarioModel usuario)
         {
             try
             {
-                UsuarioModel user = new UsuarioModel();
-                user = await dBContext.Usuarios.FindAsync(usuario);
-                if(usuario.TipoUsuario == "Vendedor")
-                {
-                    return RedirectToAction("Index", "Home"); 
-    
-                }
-                if(usuario.TipoUsuario == "Cliente")
-                {
-                    return RedirectToAction("CrearUsuario", "User"); 
-                }
+                return View(usuario);
             }
             catch (Exception e)
             {
-                
                 return Content(e.Message);
             }
+        }
 
+        //https://Localhost:5001/User/VendedorPage
+        [HttpGet("VendedorPage")]
+        public IActionResult VendedorPage(UsuarioModel usuario)
+        {
+            try
+            {
+                return View(usuario);
+            }
+            catch (Exception e)
+            {
+                return Content(e.Message);
+            }
+        }
+
+        //Verifica que el usuario ingresado sea correcto
+        //https://Localhost:5001/User/UpdateUsuario
+        [HttpPost("UpdateUsuario")]
+        public async Task<IActionResult> UpdateUsuario(UsuarioModel usuario)
+        {
+            UsuarioModel user = new UsuarioModel();
+            try
+            {
+                user = await dBContext.Usuarios.FirstAsync(a => a.User == usuario.User && a.Pass == usuario.Pass);
+                if(user.TipoUsuario == "Vendedor")
+                {
+                    return RedirectToAction("VendedorPage", user);
+                }
+                return RedirectToAction("ClientePage", user);
+            }
+            catch(Exception e)
+            {
+                return View(e.Message);
+            }
+        }
+
+        //https://Localhost:5001/User/EditarUsuario
+        [HttpGet("EditarUsuario")]
+        public async Task<IActionResult> EditarUsuario(long codigo)
+        {
+            try
+            {
+                UsuarioModel user = await dBContext.Usuarios.FindAsync(codigo);
+                if(user == null)
+                {
+                    return View("Hubo un error editando. Intentalo de nuevo.");
+                }
+                return View(user);
+            }
+            catch (Exception e)
+            {
+                return View(e.Message);
+            }
+        }
+
+        //https://Localhost:5001/User/UpdateEdicion
+        [HttpPost("UpdateEdicion")]
+        public async Task<IActionResult> UpdateEdicion(UsuarioModel usuario)
+        {
+            try
+            {
+                dBContext.Entry(usuario).State = EntityState.Modified;
+                await dBContext.SaveChangesAsync();
+                return View();
+            }
+            catch (Exception e)
+            {
+                return View(e.Message);
+            }
         }
 
         //https://Localhost:5001/User/EliminarUsuario/5

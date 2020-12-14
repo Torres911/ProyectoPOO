@@ -13,7 +13,10 @@
             <hr class="my-4">
             <p>Recuerda que si no tienes una cuenta la puedes crear aqui mismo</p>
             <p class="lead">
-                <a class="btn btn-primary btn-lg" href="LoginForm.cshtml" role="button">Iniciar Sesión</a>
+                <form asp-action="IngresarUsuario" method="GET" asp-controller="User">
+                    <button type="submit" class="btn btn-primary btn-lg">Iniciar Sesión</button>
+                </form>
+                <br>
                 <form asp-action="CrearUsuario" method="GET" asp-controller="User">
                     <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
                 </form>

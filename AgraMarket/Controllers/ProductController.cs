@@ -13,7 +13,7 @@ namespace AgraMarket.Controllers
     public class ProductController : Controller
     {
         #region Properties
-        private readonly AgraMarketDBContext dBContext;
+        public readonly AgraMarketDBContext dBContext;
         #endregion
 
         #region Constructor
@@ -25,51 +25,77 @@ namespace AgraMarket.Controllers
         }
         #endregion
 
-        //https://Localhost:5001/Product/CrearProducto
+        //https://Localhost:5001/User/CrearProducto
         [HttpGet("CrearProducto")]
-        /*async task representa una tarea que se esta ejectuando,
-        y que esta esperando para devolver el objeto del tipo 
-        especificado*/
-        public async Task<IActionResult> CrearProducto()
-        {
-            ProductoModel Producto = new ProductoModel()
-            {
-                IdVendedor = 5, //Este es el Foreign Key
-                NomProducto = "Papas",
-                FotoProducto = "LaFotoDeLasPapas",
-                ValorProducto = 15000,
-                Cantidad = 100
-            };
-            dBContext.Productos.Add(Producto);
-            /* "await" permite que se espere a que el dBContext
-            haga los cambios necesarios antes de correrlo 
-            (Esto le toma un tiempo a la bd)*/ 
-            await dBContext.SaveChangesAsync();
-            return Ok(Producto.Id.ToString());
-            /*Estos id una vez creados, no pueden repetirse en la base
-            de datos, incluso después de borrarlos*/
-        }
-
-        //https://Localhost:5001/Product/EliminarProducto/5
-        [HttpGet("EliminarProducto/{id}")]
-        public async Task<IActionResult> EliminarUsuario(long Id)
+        public IActionResult CrearProducto()
         {
             try
             {
-                UsuarioModel usuario = await dBContext.Usuarios.FindAsync(Id);
-                if(usuario != null)
-                {
-                    dBContext.Usuarios.Remove(usuario);
-                    await dBContext.SaveChangesAsync();
-                    return Ok("El usuario fue eliminado");
-                }
-                return Ok("Hubo un error al intentar eliminar el usuario"); 
+                ProductoModel producto = new ProductoModel();
+                //Especificar id
+                return View(producto);
             }
-            catch (Exception e1)
+            catch (Exception e)
             {
-                return StatusCode(410);
+                return Content(e.Message);
+            }
+        }
+
+        //https://Localhost:5001/User/GuardarProducto
+        [HttpGet("GuardarProducto")]
+        public async Task<IActionResult> GuardarProducto(ProductoModel producto)
+        {    
+            try
+            {
+                ProductoModel prod = new ProductoModel();
+                prod = await dBContext.Productos.FindAsync(prod);
+                return Content("Este producto ya existe.");
             }
 
+            catch (Exception e2)
+            {
+                dBContext.Productos.Add(producto);
+                await dBContext.SaveChangesAsync();
+                return RedirectToAction("VendedorProductosPage", "Product");
+            }
+        }
+
+        //http://localhost:5001/User/DesplegarProductos
+        [HttpGet("DesplegarProductos")]
+        public async Task<IActionResult> DesplegarProductos(int id)
+        {    
+            try
+            {
+                List<ProductoModel> dbCompleta = new List<ProductoModel>();
+                dbCompleta = await dBContext.Productos.ToListAsync();
+                List<ProductoModel> dBVendedor = new List<ProductoModel>();
+                foreach(ProductoModel temp in dbCompleta){
+                    if(temp.IdVendedor == id){
+                        dBVendedor.Add(temp);
+                    }
+                }
+                return RedirectToAction("VendedorProductosPage", dBVendedor);
+            }
+
+            catch (Exception e2)
+            {
+                return View(e2.Message);
+            }
+        }
+        
+        //http://localhost:5001/User/VendedorProductosPage
+        [HttpGet("VendedorProductosPage")]
+        public IActionResult VendedorProductosPage(List<ProductoModel> dBVendedor)
+        {    
+            try
+            {
+                return View(dBVendedor);
+            }
+
+            catch (Exception e2)
+            {
+                return View(e2.Message);
+            }
         }
     }
 }

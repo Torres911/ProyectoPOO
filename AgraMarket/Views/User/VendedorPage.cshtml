@@ -1,0 +1,56 @@
+@model AgraMarket.Models.UsuarioModel
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vendedor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+    <link rel="stylesheet" href="wwwroot/css/VendedorPageStyle.css">
+  </head>
+
+  <body>
+    <main role="main">
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Bienvenido @Model.Nombre,</h1>
+          <p>Este es el lobby de su tienda, aqui podrá gestionar sus productos y editar los detalles de su cuenta.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h2>Gestionar Productos</h2>
+            <p>Aqui puedes ver que productos tienes, en que cantidad los tienes, editarlos o simplemente eliminarlos.</p>
+            <form asp-action="DesplegarProductos" method="GET" asp-controller="Product" asp-route-usuario= "@Model.Id">
+              <button type="submit" class="btn btn-success btn-block">Gestionar Productos</button>
+            </form>
+          </div>
+          <div class="col-6">
+            <h2>Gestionar cuenta</h2>
+            <!---asp-route-codigo = “@Model.Id”-->
+            <p>Aqui podrás acceder a los detalles de tu cuenta y poder cambiarlos a tu gusto.</p>
+            <a asp-route-codigo = “@Model.Id class="btn btn-secondary" >Ver detalles</a>
+        </div>
+        <hr>
+      </div> 
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h2>Información Ventas</h2>
+            <p>Aqui podrás ver los detalles de tu historial de ventas en la plataforma. También podras acceder a la información de tus ganancias.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">Ver detalles &raquo;</a></p>
+          </div>
+          <div class="col-6">
+            <h2>Cerrar sesión</h2>
+            <p>Si necesitas cambiar de cuenta o crear un nuevo usuario. Regresa a la pagina principal aqui.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">Cerrar sesión &raquo;</a></p>
+          </div>
+        </div>
+        <hr>
+      </div> 
+    </main>
+  </body>
+</html>

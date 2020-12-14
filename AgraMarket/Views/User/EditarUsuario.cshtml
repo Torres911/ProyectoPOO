@@ -5,22 +5,22 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="wwwroot/css/CrearUsuarioStyle.css">
-<title>Registrarse</title>
+<link rel="stylesheet" href="wwwroot/css/EditarUsuarioStyle.css">
+<title>Editar perfil</title>
 </head>
 <body>
 
 <div class="split left">
   <div class="centered">
-    <img src="wwwroot/images/registerPage.jpg" alt="Campesino recogiendo cafe">
+    <img src="wwwroot/images/registerPage.jpg" alt="cualquier cosa">
   </div>
 </div>
 
 <div class="split right">
-  <form asp-action="GuardarUsuario" method="GET" asp-controller="User">
+  <form asp-action="UpdateEdicion" method="POST" asp-controller="User">
     <div class="container p-4">
-        <h1>Registro</h1>
-        <p>Ingresa tus datos para disfrutar de los mejores productos del campo.</p>
+        <h1>Editar perfil</h1>
+        <p>Edita tu información y actualiza, para modificar tu perfil en la plataforma.</p>
         <label>Información básica</label>
           <div class="row row-space">
           <div class="col-6">
@@ -40,13 +40,6 @@
           </div>
           </div>
           <br>
-          <label for="userType">¿Quien eres en la comunidad?</label>
-          <select asp-for="TipoUsuario"class="custom-select" id="TipoUsuario">
-            <option selected>Escoja una opción</option>
-            <option value="Vendedor">Vendedor</option>
-            <option value="Cliente">Cliente</option>
-          </select>
-          <br><br>
           <label>Información de cuenta</label>
           <div class="row row-space">
           <div class="col-6">
@@ -71,9 +64,6 @@
             <div class="col-6">
             <input asp-for="Direccion" type="input" class="form-control" id="Direccion", placeholder="Dirección de envio" required>
             </div>
-            <div class="col-6">
-              <p style="font-size:1vw">*En caso de ser vendedor, ingrese la dirección de entrega de productos.</p>
-            </div>
           </div>
           <br>
           <label>Información bancaria</label>
@@ -93,10 +83,9 @@
           </div>
           <br>
           <div class="col-md-12 text-center">
-            <button type="submit" value="Guardar usuario" class="btn btn-success btn-block">Registrarme</button>
+            <button type="submit" value="Editar Usuario" class="btn btn-success btn-block">Actualizar usuario</button>
             <br>
-            <p>Ya estas registrado?</p>
-            <a asp-action="IngresarUsuario" asp-controller="User" class="link">Iniciar sesión</a>
+            <a asp-action="EliminarUsuario" asp-controller="User" class="link">Eliminar mi cuenta</a>
           </div>
      </div>
   </form>
