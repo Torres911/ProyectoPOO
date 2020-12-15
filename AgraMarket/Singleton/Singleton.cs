@@ -13,7 +13,7 @@ namespace Singleton
 
         protected Singleton(){ //contructor
 
-            mensaje = "Hola mundo";
+            mensaje = "Hola bbsita bblin";
         } 
 
         public static Singleton Instance{

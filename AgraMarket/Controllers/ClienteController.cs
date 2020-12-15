@@ -17,7 +17,7 @@ namespace AgraMarket.Controllers
 
         #endregion Properties
 
-        /*#region Constructor
+        #region Constructor
 
         public ClienteController(AgraMarketDBContext dBContext)
         {
@@ -42,6 +42,55 @@ namespace AgraMarket.Controllers
             }
         }
         #endregion Constructor*/
+        
+        //https://Localhost:5001/Cliente/RecargarDinero
+        [HttpGet("RecargarDinero")]
+        public async Task<IActionResult> RecargarDinero(long id)
+        {
+            try
+            {
+                UsuarioModel user = await dBContext.Usuarios.FindAsync(id); //user.codigo
+                if(user == null)
+                {
+                    return Content("Hubo un error encontrado el usuario. Intentalo de nuevo.");
+                }
+                return RedirectToAction("UpdateRecarga", "Cliente", user);
+            }
+            catch (Exception e)
+            {
+                return View(e.Message);
+            }
+        }
 
+        //https://Localhost:5001/User/UpdateRecarga
+        [HttpPost("UpdateRecarga")]
+        public async Task<IActionResult> UpdateRecarga(UsuarioModel usuario)
+        {
+            try
+            {
+                dBContext.Entry(usuario).State = EntityState.Modified;
+                await dBContext.SaveChangesAsync();
+                usuario.Monto = usuario.Monto + 100000;
+                return RedirectToAction("ClientePage", usuario);
+            }
+            catch (Exception e)
+            {
+                return View(e.Message);
+            }
+        }
+
+        //https://Localhost:5001/User/BuscarProdutco
+        [HttpPost("BuscarProductos")]
+        public async Task<IActionResult> BuscarProductos()
+        {
+            List<ProductoModel> completa = new List<ProductoModel>();
+            completa = await dBContext.Productos.ToListAsync();
+            if (completa == null)
+            {
+                return Content("Aún no hay productos para ti, pero pronto tendremos muchos :).");
+            }
+            return View("MostrarProductos", completa);
+        }
+        
     }
 }

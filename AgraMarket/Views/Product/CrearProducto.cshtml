@@ -1,52 +1,57 @@
 @model AgraMarket.Models.ProductoModel
 
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="wwwroot/css/CrearProductoStyle.css">
-<title>Crear producto</title>
-</head>
-<body>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="wwwroot/css/CrearProductoStyle.css">
+    <title>Crear producto</title>
+  </head>
+  <body>
 
-<div class="split left">
-  <div class="centered">
-    <img src="../images/registerPage.jpg" alt="Campesino recogiendo cafe">
-  </div>
-</div>
+    <div class="split left">
+      <div class="centered">
+        <img src="../images/registerPage.jpg" alt="Campesino recogiendo cafe">
+      </div>
+    </div>
 
-<div class="split right">
-  <form asp-action="GuardarProducto" method="GET" asp-controller="Product">
-    <div class="container p-4">
-        <h1>Añadir producto</h1>
-        <p>Ingrese la información del nuevo producto para agregarlo a tu catalogo de productos.</p>
-          <div class="row row-space">
-          <div class="col-6">
-            <input asp-for="NomProducto" type="input" class="form-control" id="NomProducto", placeholder="Nombre" required>
-          </div>
-          <br><br>
-          </div>
-          <div class="row row-space">
-          <div class="col-6">
-            <input asp-for="TipoProducto" type="input" class="form-control" id="TipoProdcuto", placeholder="Descripción del producto" required>
-          </div>
-          </div>
-          <br>
-          <div class="row row-space">
-          <div class="col-6">
-            <input asp-for="Precio" type="input" class="form-control" id="Precio", placeholder="Precio" required>
-          </div>
-          <div class="row row-space">
-          </div>
-          </div>
-          <div class="col-md-12 text-center">
-            <button type="submit" value="Crear producto" class="btn btn-success btn-block">Crear producto</button>
-            <br>
-            <a asp-action="VendedorPage" asp-controller="User" class="link">Cancelar</a>
-          </div>
-     </div>
-  </form>
-</div>
-</body>
+    <div class="split right">
+      <form asp-action="GuardarProducto" method="GET" asp-controller="Product">
+          <div class="container p-4">
+              <h1>Añadir producto</h1>
+              <p>Ingrese la información del nuevo producto para agregarlo a tu catalogo de productos.</p>
+                <div class="row row-space">
+                  <div class="col-6">
+                  <input asp-for="IdVendedor" type="hidden">
+                </div>
+                <br><br>
+                <div class="col-6">
+                  <input asp-for="NomProducto" type="input" class="form-control" id="NomProducto", placeholder="Nombre" required>
+                </div>
+                <br><br>
+                </div>
+                <div class="row row-space">
+                <div class="col-6">
+                  <input asp-for="TipoProducto" type="input" class="form-control" id="TipoProdcuto", placeholder="Descripción del producto" required>
+                </div>
+              </div>
+                <br>
+                <div class="row row-space">
+                <div class="col-6">
+                  <input asp-for="Precio" type="input" class="form-control" id="Precio", placeholder="Precio" required>
+                </div>
+                <div class="row row-space">
+                </div>
+                </div>
+                <br>
+                <div class="col-md-12 text-center">
+                  <button type="submit" value="Crear producto" class="btn btn-success btn-block">Crear producto</button>
+                  <br> <br>
+                  <a asp-action="VendedorPage" asp-controller="User" class="link">Cancelar</a>
+                </div>
+      </form>    
+       </div>
+    </div>
+  </body>
 </html> 

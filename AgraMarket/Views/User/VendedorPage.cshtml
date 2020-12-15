@@ -1,7 +1,4 @@
 @model AgraMarket.Models.UsuarioModel
-@{
-    TempData["Id"] = @Model.Id;
-}
 
 
 <!doctype html>
@@ -11,7 +8,7 @@
     <title>Vendedor</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
-    <link rel="stylesheet" href="wwwroot/css/VendedorPageStyle.css">
+    <link rel="stylesheet" href="../../wwwroot/css/VendedorPageStyle.css">
   </head>
 
   <body>
@@ -28,7 +25,7 @@
           <div class="col-6">
             <h2>Gestionar Productos</h2>
             <p>Aqui puedes ver que productos tienes, en que cantidad los tienes, editarlos o simplemente eliminarlos.</p>
-            <form asp-action="DesplegarProductos" method="GET" asp-controller="Product" asp-route-id= "@Model.Id">
+            <form asp-action="DesplegarProductos" method="POST" asp-controller="Product" asp-route-id= "@Model.Id">
               <button type="submit" class="btn btn-success btn-block">Gestionar Productos</button>
             </form>
           </div>
@@ -37,7 +34,7 @@
             <!---asp-route-codigo = “@Model.Id”-->
             <p>Aqui podrás acceder a los detalles de tu cuenta y poder cambiarlos a tu gusto.</p>
             <form asp-action="EditarUsuario" method="POST" asp-controller="User" asp-route-codigo= "@Model.Id">
-              <button type="submit" class="btn btn-success btn-block">Ver detalles</button>
+              <button type="submit" class="btn btn-success btn-block">Editar Usuario</button>
             </form>
             <!--<a asp-route-codigo = “@Model.Id class="btn btn-secondary" >Ver detalles</a>-->
         </div>
@@ -47,14 +44,16 @@
         <div class="row">
           <div class="col-6">
             <h2>Información Ventas</h2>
-            <p>Aqui podrás ver los detalles de tu historial de ventas en la plataforma. También podras acceder a la información de tus ganancias.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">Ver detalles &raquo;</a></p>
+            <p>Aqui podrás crear nuevos productos para tu tienda en la plataforma.</p>
+            <form asp-action="CrearProducto" method="POST" asp-controller="Product" asp-route-id= "@Model.Id">
+              <button type="submit" class="btn btn-success btn-block">Gestionar Ventas</button>
+            </form>
           </div>
           <div class="col-6">
             <h2>Cerrar sesión</h2>
             <p>Si necesitas cambiar de cuenta o crear un nuevo usuario. Regresa a la pagina principal aqui.</p>
             <form asp-action="Index" method="POST" asp-controller="Home">
-              <button type="submit" class="btn btn-success btn-block">Ver detalles</button>
+              <button type="submit" class="btn btn-success btn-block">Cerrar Sesion</button>
             </form>
           </div>
         </div>

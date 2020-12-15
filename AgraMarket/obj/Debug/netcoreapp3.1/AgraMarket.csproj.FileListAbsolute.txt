@@ -60,8 +60,9 @@ D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\ViewModels\User\UserList.cshtml.g.cs
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\User\CrearUsuario.cshtml.g.cs
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\User\IngresarUsuario.cshtml.g.cs
-D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\User\ClientePage.cshtml.g.cs
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\User\VendedorPage.cshtml.g.cs
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\User\EditarUsuario.cshtml.g.cs
-D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\Product\VendedorProductosPage.cshtml.g.cs
 D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\Product\CrearProducto.cshtml.g.cs
+D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\Product\DesplegarProductos.cshtml.g.cs
+D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\Cliente\MostrarProductos.cshtml.g.cs
+D:\Universidad\Semestre V\Programacion Orientada a Objetos\Proyecto\ProyectoPOO\AgraMarket\obj\Debug\netcoreapp3.1\Razor\Views\Cliente\ClientePage.cshtml.g.cs

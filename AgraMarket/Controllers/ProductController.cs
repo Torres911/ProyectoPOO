@@ -27,11 +27,12 @@ namespace AgraMarket.Controllers
 
         //https://Localhost:5001/User/CrearProducto
         [HttpPost("CrearProducto")]
-        public IActionResult CrearProducto()
+        public IActionResult CrearProducto(long id)
         {
             try
             {
                 ProductoModel producto = new ProductoModel();
+                producto.IdVendedor = id;
                 //Especificar id
                 return View(producto);
             }
@@ -42,13 +43,13 @@ namespace AgraMarket.Controllers
         }
 
         //https://Localhost:5001/User/GuardarProducto
-        [HttpPost("GuardarProducto")]
+        [HttpGet("GuardarProducto")]
         public async Task<IActionResult> GuardarProducto(ProductoModel producto)
         {    
             try
             {
                 ProductoModel prod = new ProductoModel();
-                prod = await dBContext.Productos.FindAsync(prod);
+                prod = await dBContext.Productos.FindAsync(producto);
                 return Content("Este producto ya existe.");
             }
 
@@ -56,42 +57,21 @@ namespace AgraMarket.Controllers
             {
                 dBContext.Productos.Add(producto);
                 await dBContext.SaveChangesAsync();
-                return RedirectToAction("VendedorProductosPage", "Product");
+                return RedirectToAction("VendedorPage", "Product");
             }
         }
 
-        //http://localhost:5001/User/DesplegarProductos/{id}
-        [HttpGet("DesplegarProductos")]
+        //http://localhost:5001/User/DesplegarProductos/
+        [HttpPost("DesplegarProductos")]
         public async Task<IActionResult> DesplegarProductos(long id)
-        {    
+        {
+            UsuarioModel user = new UsuarioModel();
+            //List<UsuarioModel> ListaCompleta = new List<UsuarioModel>();
+            //ListaCompleta = await dBContext.Usuarios.ToListAsync();
+            user = await dBContext.Usuarios.FindAsync(id);
             try
             {
-                UsuarioModel user = await dBContext.Usuarios.FindAsync(id);
-                return RedirectToAction("VendedorProductosPage", user);
-            }
-
-            catch (Exception e2)
-            {
-                return View(e2.Message);
-            }
-        }
-        
-        //http://localhost:5001/User/VendedorProductosPage
-        [HttpGetss("VendedorProductosPage")]
-        public async Task<IActionResult> VendedorProductosPage(UsuarioModel usuario)
-        {    
-            try
-            {
-                List<ProductoModel> dbCompleta = new List<ProductoModel>();
-                dbCompleta = await dBContext.Productos.ToListAsync();
-                foreach(ProductoModel temp in dbCompleta)
-                {
-                    if(temp.IdVendedor == usuario.Id)
-                    {
-                        usuario.listaProductos.Add(temp);
-                    }
-                }
-                return View(usuario);
+                return View(user);
             }
             catch (Exception e2)
             {

@@ -19,8 +19,8 @@ namespace AgraMarket.Models
         public string TipoUsuario { get; set; } 
         public string NumeroTarjetaCredito { get; set; }
         public string TipoTarjetaCredito { get; set; }
-        public List<ProductoModel> listaProductos { get; set; }
         public long Monto{ get; set; }
+        public List<ProductoModel> listaProductos { get; set; }
     }
 }
 

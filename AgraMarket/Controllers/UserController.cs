@@ -30,9 +30,9 @@ namespace AgraMarket.Controllers
         [HttpGet("CrearUsuario")]
         public IActionResult CrearUsuario()
         {
+            UsuarioModel usuario = new UsuarioModel();
             try
             {
-                UsuarioModel usuario = new UsuarioModel();
                 return View(usuario);
             }
             catch (Exception e)

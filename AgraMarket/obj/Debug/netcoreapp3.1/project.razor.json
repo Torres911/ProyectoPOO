@@ -14397,6 +14397,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Cliente\\MostrarProductos.cshtml",
+      "TargetPath": "Views\\Cliente\\MostrarProductos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -14437,8 +14442,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\User\\ClientePage.cshtml",
-      "TargetPath": "Views\\User\\ClientePage.cshtml",
+      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Cliente\\ClientePage.cshtml",
+      "TargetPath": "Views\\Cliente\\ClientePage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Product\\DesplegarProductos.cshtml",
+      "TargetPath": "Views\\Product\\DesplegarProductos.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14449,11 +14459,6 @@
     {
       "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Universidad\\Semestre V\\Programacion Orientada a Objetos\\Proyecto\\ProyectoPOO\\AgraMarket\\Views\\Product\\VendedorProductosPage.cshtml",
-      "TargetPath": "Views\\Product\\VendedorProductosPage.cshtml",
       "FileKind": "mvc"
     },
     {
